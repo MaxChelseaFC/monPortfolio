@@ -1,5 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { projects } from "../data/projects";
+import React from "react";
 
 export default function ProjectDetail() {
     const { id } = useParams();
@@ -76,19 +77,24 @@ export default function ProjectDetail() {
                             return (
                                 <div key={idx} className="mb-4">
                                     <h3 className="text-indigo-500 font-medium mb-2">{categoryName}</h3>
-                                    <ul className="list-disc list-inside text-gray-700 ml-4">
+                                    <div className="flex flex-wrap gap-2">
                                         {skills.map((skill, sIdx) => (
-                                            <li key={sIdx}>{skill}</li>
+                                            <span
+                                            key={sIdx}
+                                         className={`px-2 py-1 text-sm rounded bg-blue-200`}>
+                                        {skill}
+                                        </span>
                                         ))}
-                                    </ul>
+                                    </div>
                                 </div>
-                            );
+                            )
+                            ;
                         })}
                     </div>
                     )}
                     {project.realisations && project.realisations.length > 0 && (
-                    <div>
-                        <h2 className="text-indigo-600 font-semibold text-lg mb-2">
+                        <div>
+                            <h2 className="text-indigo-600 font-semibold text-lg mb-2">
                             Réalisations
                         </h2>
                         {project.realisations.map((category, idx) => {
