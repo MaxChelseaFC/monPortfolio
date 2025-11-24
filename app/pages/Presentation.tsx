@@ -12,40 +12,53 @@ export default function Presentation() {
         >
             {/* ---- SECTION PRÉSENTATION ---- */}
             <div className="flex flex-col md:flex-row gap-6">
-                <div className="bg-white p-6 rounded-lg shadow-md flex-1">
+                <motion.div className="bg-white p-6 rounded-lg shadow-md flex-1"
+                            whileHover={{scale: 1.02}}
+                            transition={{type: "spring", stiffness: 200}}>
                     <h2 className="text-2xl font-bold mb-4">Présentation</h2>
                     <p className="mb-4">
-                        Développeur web depuis plusieurs années, j’ai travaillé sur des projets variés allant
-                        du site vitrine à l’application web complexe. Je suis passionné par les nouvelles technologies
-                        et l’expérience utilisateur.
+                        Diplomé d'un BUT Informatique, je suis actuellement à la recherche d'un premier emploi en tant
+                        que développeur. <br/>
+                        J’aime comprendre comment les choses fonctionnent, apprendre de nouvelles technologies et
+                        travailler sur des projets qui ont un impact réel.
                     </p>
-                </div>
+                    <a
+                        href="/img/CV_2025_Maxime_PETIT.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition"
+                    >
+                        Consulter mon CV
+                    </a>
+                </motion.div>
 
                 {/* ---- SECTION CONTACT ---- */}
-                <div className="bg-white p-6 rounded-lg shadow-md flex-1">
+                <motion.div className="bg-white p-6 rounded-lg shadow-md flex-1"
+                            whileHover={{scale: 1.02}}
+                            transition={{type: "spring", stiffness: 200}}>
                     <h2 className="text-2xl font-bold mb-4">Contact</h2>
 
-                    <div className="flex gap-4">
-                        <h4 className="font-semibold">📧 Email</h4>
-                        <a
-                            href="mailto:maxime.petit92@hotmail.com"
-                            className="text-blue-600 underline"
-                        >maxime.petit92@hotmail.com</a>
+                    <div className="flex flex-col gap-3">
+                        <div className="flex gap-4">
+                            <h4 className="font-semibold">📧 Email</h4><p>maxime.petit92@hotmail.com</p>
+                        </div>
+                        <div className="flex gap-4">
+                            <h4 className="font-semibold">💼 LinkedIn</h4>
+                            <a
+                                href="https://www.linkedin.com/in/maxime-petit-2b60b7264/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-blue-600 underline"
+                            >linkedin.com/in/maxime-petit</a>
+                        </div>
                     </div>
-                    <div className="flex gap-4">
-                    <h4 className="font-semibold">💼 LinkedIn</h4>
-                        <a
-                            href="https://www.linkedin.com/in/maxime-petit-2b60b7264/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-blue-600 underline"
-                        >linkedin.com/in/maxime-petit</a>
-                    </div>
-                </div>
+                </motion.div>
             </div>
 
             {/* ---- SECTION COMPÉTENCES ---- */}
-            <div className="bg-white p-6 rounded-lg shadow-md">
+            <motion.div className="bg-white p-6 rounded-lg shadow-md"
+                        whileHover={{scale: 1.02}}
+                        transition={{type: "spring", stiffness: 200}}>
                     <h2 className="text-2xl font-bold mb-4">Compétences techniques</h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -66,8 +79,22 @@ export default function Presentation() {
                             </div>
                         ))}
                     </div>
-                </div>
+                </motion.div>
+
+            {/* ---- SECTION HOBBIES ---- */}
+            <motion.div className="bg-white p-6 rounded-lg shadow-md "
+                        whileHover={{scale: 1.02}}
+                        transition={{type: "spring", stiffness: 200}}>
+                <h2 className="text-2xl font-bold mb-4">Centres d’intérêt</h2>
+
+                <ul>
+                    <li>🎬 Cinema </li>
+                    <li>🏃‍♂️️ Sport - football, course à pied, basketball, tennis, formule 1...</li>
+                    <li>🎮 Jeux vidéo</li>
+                    <li>🎵 Musique</li>
+                </ul>
+            </motion.div>
 
         </motion.section>
-);
+    );
 }

@@ -23,7 +23,7 @@ export default function Home() {
                 <Link to="/presentation" className="flex-1">
                     <motion.div
                         className="flex-1 bg-white p-6 rounded-lg shadow-md"
-                        whileHover={{scale: 1.01}}
+                        whileHover={{scale: 1.05}}
                         transition={{type: "spring", stiffness: 200}}
                     >
                         <h2 className="text-2xl font-bold mb-4">Profil</h2>
@@ -35,25 +35,15 @@ export default function Home() {
                             Passionné par les arts et le sport, je cherche à mettre mes compétences
                             techniques et relationnelles au service d’un poste dans le développement informatique.
                         </p>
-                        <div className="flex flex-col md:flex-row gap-6">
-                            <a
-                                href="/img/CV_2025_Maxime_PETIT.pdf"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition"
-                            >
-                                Consulter mon CV
-                            </a>
-                            <p className="text-sm text-gray-500 mt-2">Voir mon profil détaillé →</p>
-                        </div>
+                        <p className="text-sm text-gray-500 mt-2">Voir mon profil détaillé →</p>
                     </motion.div>
                 </Link>
 
                 {/* Aperçu Compétences */}
                 <Link to="/presentation" className="flex-1">
                     <motion.div
-                        className="bg-white p-6 rounded-lg shadow-md cursor-pointer hover:shadow-lg transition"
-                        whileHover={{ scale: 1.01 }}
+                        className="bg-white p-6 rounded-lg shadow-md"
+                        whileHover={{ scale: 1.05 }}
                         transition={{ type: "spring", stiffness: 200 }}
                     >
                         <h2 className="text-2xl font-bold mb-4">Compétences</h2>
@@ -71,11 +61,8 @@ export default function Home() {
                                             </span>
                                         ))}
                                         {skills.length > 6 && (
-                                            <span
-                                                className={`px-2 py-1 text-sm rounded bg-blue-200`}
-                                            >
-                    …
-                </span>
+                                            <span className={`px-2 py-1 text-sm rounded bg-blue-200`}>…
+                                            </span>
                                         )}
                                     </div>
                                 </div>

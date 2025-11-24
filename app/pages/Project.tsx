@@ -5,7 +5,10 @@ import { motion } from "framer-motion";
 
 export default function Projects() {
     return (
-        <motion.section className="p-6 max-w-6xl mx-auto flex flex-col gap-12">
+        <motion.section className="p-6 max-w-6xl mx-auto flex flex-col gap-12"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6 }}>
             <div className="bg-white p-6 rounded-lg shadow-md">
                 <h2 className="text-2xl font-bold mb-6">Tous les projets</h2>
 

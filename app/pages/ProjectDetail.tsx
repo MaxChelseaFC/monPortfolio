@@ -1,4 +1,5 @@
 import { useParams, Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import { projects } from "../data/projects";
 import React from "react";
 
@@ -11,7 +12,10 @@ export default function ProjectDetail() {
     }
 
     return (
-        <div className="bg-white p-6 rounded-lg shadow-md max-w-3xl mx-auto mt-8">
+        <motion.div className="bg-white p-6 rounded-lg shadow-md max-w-3xl mx-auto mt-8"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}>
             {/* Retour */}
             <Link
                 to="/projects"
@@ -114,6 +118,6 @@ export default function ProjectDetail() {
                     </div>
                     )}
                 </div>
-        </div>
+        </motion.div>
     );
 }

@@ -1,24 +1,30 @@
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route, NavLink } from "react-router-dom";
 import Home from "./pages/Home";
 import Presentation from "./pages/Presentation";
 import Project from "./pages/Project";
 import ProjectDetail from "./pages/ProjectDetail";
 
 export default function App() {
+    // @ts-ignore
+    const linkClass = ({ isActive }) =>
+        `hover:text-green-400 transition-colors ${isActive ? "text-green-400" : ""}`;
+
     return (
         <HashRouter>
             <div className="flex flex-col min-h-screen">
-                <header className="bg-gray-900 text-white p-6 text-center">
-                    <a href="#/">
-                    <h1 className="text-3xl font-bold">Maxime Petit</h1>
-                    </a>
+                {/* Header */}
+                <header className="bg-gray-900 text-white p-6 text-center shadow-md">
+                    <NavLink to="/" className="text-3xl font-bold hover:text-green-400 transition">
+                        Maxime Petit
+                    </NavLink>
                     <nav className="mt-4 flex justify-center gap-6 text-lg">
-                        <a href="#/" className="hover:text-green-400">Accueil</a>
-                        <a href="#/presentation" className="hover:text-green-400">Présentation</a>
-                        <a href="#/projects" className="hover:text-green-400">Projets</a>
+                        <NavLink to="/" className={linkClass}>Accueil</NavLink>
+                        <NavLink to="/presentation" className={linkClass}>Présentation</NavLink>
+                        <NavLink to="/projects" className={linkClass}>Projets</NavLink>
                     </nav>
                 </header>
 
+                {/* Main */}
                 <main className="flex-grow p-6 bg-gray-50">
                     <Routes>
                         <Route path="/" element={<Home />} />
@@ -28,7 +34,8 @@ export default function App() {
                     </Routes>
                 </main>
 
-                <footer className="bg-gray-900 text-white p-6 text-center">
+                {/* Footer */}
+                <footer className="bg-gray-900 text-white p-6 text-center shadow-inner">
                     &copy; 2025 Maxime Petit
                 </footer>
             </div>
