@@ -2,6 +2,7 @@ import { HashRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Presentation from "./pages/Presentation";
 import Project from "./pages/Project";
+import ProjectDetail from "./pages/ProjectDetail";
 
 export default function App() {
     return (
@@ -23,6 +24,7 @@ export default function App() {
                         <Route path="/" element={<Home />} />
                         <Route path="/presentation" element={<Presentation />} />
                         <Route path="/projects" element={<Project />} />
+                        <Route path="/projects/:id" element={<ProjectDetail />} />
                     </Routes>
                 </main>
 
