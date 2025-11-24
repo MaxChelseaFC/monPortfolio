@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { skillCategories } from "../data/skills";
 
 export default function Presentation() {
-    const skillColors = ["bg-blue-200", "bg-green-200", "bg-yellow-200", "bg-pink-200"];
 
     return (
         <motion.section
@@ -20,6 +19,8 @@ export default function Presentation() {
                     et l’expérience utilisateur.
                 </p>
 
+                <h3 className="text-xl font-semibold mb-2">Contact</h3>
+
                 {/* Compétences techniques avec badges colorés */}
                 <h3 className="text-xl font-semibold mb-2">Compétences techniques</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -30,9 +31,7 @@ export default function Presentation() {
                                 {skills.map((skill, sIdx) => (
                                     <span
                                         key={sIdx}
-                                        className={`px-2 py-1 text-sm rounded ${
-                                            skillColors[idx % skillColors.length]
-                                        }`}
+                                        className={`px-2 py-1 text-sm rounded bg-blue-200`}
                                     >
                                         {skill}
                                     </span>

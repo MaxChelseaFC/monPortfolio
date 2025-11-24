@@ -4,9 +4,11 @@ import { projects } from "../data/projects";
 import { Link } from "react-router-dom";
 import { skillCategories } from "../data/skills";
 
-
 export default function Home() {
     const mainProjects = projects.slice(0, 2);
+
+    // Pour l'aperçu, on prend seulement 2 catégories
+    const previewSkills = skillCategories.slice(0, 2);
 
     return (
         <motion.section
@@ -18,62 +20,79 @@ export default function Home() {
             {/* Profil et Compétences */}
             <div className="flex flex-col md:flex-row gap-6">
                 {/* Profil */}
-                <motion.div
-                    className="flex-1 bg-white p-6 rounded-lg shadow-md"
-                    whileHover={{ scale: 1.01 }}
-                    transition={{ type: "spring", stiffness: 200 }}
-                >
-                    <h2 className="text-2xl font-bold mb-4">Profil</h2>
-                    <p className="mb-2">
-                        Développeur passionné et curieux, diplômé d’un BUT Informatique,
-                        j'apprends rapidement et apprécie travailler en équipe.
-                    </p>
-                    <p className="mb-4">
-                        Passionné par les arts et le sport, je cherche à mettre mes compétences
-                        techniques et relationnelles au service d’un poste dans le développement informatique.
-                    </p>
-                    <a
-                        href="/img/CV_2025_Maxime_PETIT.pdf"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition"
+                <Link to="/presentation" className="flex-1">
+                    <motion.div
+                        className="flex-1 bg-white p-6 rounded-lg shadow-md"
+                        whileHover={{scale: 1.01}}
+                        transition={{type: "spring", stiffness: 200}}
                     >
-                        Consulter mon CV
-                    </a>
-                </motion.div>
+                        <h2 className="text-2xl font-bold mb-4">Profil</h2>
+                        <p className="mb-2">
+                            Développeur passionné et curieux, diplômé d’un BUT Informatique,
+                            j'apprends rapidement et apprécie travailler en équipe.
+                        </p>
+                        <p className="mb-4">
+                            Passionné par les arts et le sport, je cherche à mettre mes compétences
+                            techniques et relationnelles au service d’un poste dans le développement informatique.
+                        </p>
+                        <div className="flex flex-col md:flex-row gap-6">
+                            <a
+                                href="/img/CV_2025_Maxime_PETIT.pdf"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition"
+                            >
+                                Consulter mon CV
+                            </a>
+                            <p className="text-sm text-gray-500 mt-2">Voir mon profil détaillé →</p>
+                        </div>
+                    </motion.div>
+                </Link>
 
-                {/* Compétences par catégorie */}
-                <motion.div
-                    className="flex-1 bg-white p-6 rounded-lg shadow-md"
-                    whileHover={{scale: 1.01}}
-                    transition={{type: "spring", stiffness: 200}}
-                >
-                    <h2 className="text-2xl font-bold mb-4">Compétences</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                        {skillCategories.map(([categoryName, skills], idx) => (
-                            <div key={idx}>
-                                <h3 className="text-indigo-600 font-semibold mb-2">{categoryName}</h3>
-                                <div className="flex flex-wrap gap-2">
-                                    {skills.map((skill, sIdx) => (
-                                        <span key={sIdx} className={`px-2 py-1 text-sm rounded bg-blue-200`}>
-                                        {skill}
-                                      </span>
-                                    ))}
+                {/* Aperçu Compétences */}
+                <Link to="/presentation" className="flex-1">
+                    <motion.div
+                        className="bg-white p-6 rounded-lg shadow-md cursor-pointer hover:shadow-lg transition"
+                        whileHover={{ scale: 1.01 }}
+                        transition={{ type: "spring", stiffness: 200 }}
+                    >
+                        <h2 className="text-2xl font-bold mb-4">Compétences</h2>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-2">
+                            {previewSkills.map(([categoryName, skills], idx) => (
+                                <div key={idx}>
+                                    <h3 className="text-indigo-600 font-semibold mb-2">{categoryName}</h3>
+                                    <div className="flex flex-wrap gap-2">
+                                        {skills.slice(0, 6).map((skill, sIdx) => (
+                                            <span
+                                                key={sIdx}
+                                                className={`px-2 py-1 text-sm rounded bg-blue-200`}
+                                            >
+                                                {skill}
+                                            </span>
+                                        ))}
+                                        {skills.length > 6 && (
+                                            <span
+                                                className={`px-2 py-1 text-sm rounded bg-blue-200`}
+                                            >
+                    …
+                </span>
+                                        )}
+                                    </div>
                                 </div>
-                            </div>
-                        ))}
-                    </div>
-                </motion.div>
+                            ))}
+                        </div>
+                        <p className="text-sm text-gray-500 mt-2">Voir toutes mes compétences →</p>
+                    </motion.div>
+                </Link>
             </div>
 
             {/* Projets principaux */}
             <motion.div
                 className="bg-white p-6 rounded-lg shadow-md"
-                whileHover={{scale: 1.01}}
-                transition={{type: "spring", stiffness: 200}}
+                whileHover={{ scale: 1.01 }}
+                transition={{ type: "spring", stiffness: 200 }}
             >
                 <h2 className="text-2xl font-bold mb-4">Projets principaux</h2>
-
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {mainProjects.map((proj) => (
                         <Link to={`/projects/${proj.id}`} key={proj.id}>

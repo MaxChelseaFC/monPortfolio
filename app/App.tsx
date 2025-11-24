@@ -29,7 +29,7 @@ export default function App() {
                 </main>
 
                 <footer className="bg-gray-900 text-white p-6 text-center">
-                    &copy; 2025 Maxime Petit | <a href="mailto:contact@maxime.com" className="text-green-400">Contact</a>
+                    &copy; 2025 Maxime Petit
                 </footer>
             </div>
         </HashRouter>

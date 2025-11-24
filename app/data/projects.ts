@@ -14,7 +14,7 @@ export const projects: Project[] = [
     {
         id: "stage-irrifrance",
         title: "Développeur full-stack (stage)",
-        description: "Gestion des différentes applications de l'entreprise...",
+        description: "Gestion des différentes applications de l'entreprise.",
         details: `Irrifrance est une entreprise spécialisée dans la production de machines agricoles, principalement destinées à l'irrigation des cultures. 
         
         Mon équipe était composée de trois personnes et j'occupais un rôle de développeur full-stack.
@@ -33,7 +33,7 @@ export const projects: Project[] = [
     {
         id: "sae-s5",
         title: "Gestion des SAEs",
-        description: "Application permettant de gérer les SAE du BUT Informatique",
+        description: "Application permettant de gérer les SAE du BUT Informatique.",
         details:
             `Les SAEs (situations d'apprentissage et d'évaluation) sont des projets donnés aux étudiants du BUT. Ils ont souvent pour objectif de simuler ce à quoi un projet dans un contexte professionnel pourrait ressembler.
             
