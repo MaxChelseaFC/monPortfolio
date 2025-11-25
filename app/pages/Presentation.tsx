@@ -1,6 +1,16 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { skillCategories } from "../data/skills";
+import { PlusIcon } from 'lucide-react';
+import {
+    LiquidButton,
+    type LiquidButtonProps,
+} from '../../components/animate-ui/components/buttons/liquid';
+
+interface LiquidButtonDemoProps {
+    variant: LiquidButtonProps['variant'];
+    size: LiquidButtonProps['size'];
+}
 
 export default function Presentation() {
     return (
@@ -22,14 +32,16 @@ export default function Presentation() {
                         J’aime comprendre comment les choses fonctionnent, apprendre de nouvelles technologies et
                         travailler sur des projets qui ont un impact réel.
                     </p>
-                    <a
-                        href="/img/CV_2025_Maxime_PETIT.pdf"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition"
-                    >
-                        Consulter mon CV
-                    </a>
+                    <LiquidButton asChild variant="default" size="default">
+                        <a
+                            href="/img/CV_2025_Maxime_PETIT.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Consulter mon CV
+                        </a>
+                    </LiquidButton>
+
                 </motion.div>
 
                 {/* ---- SECTION CONTACT ---- */}
