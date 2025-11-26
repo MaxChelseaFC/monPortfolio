@@ -243,8 +243,8 @@ function GravityStarsBackground({
       p.x += p.vx;
       p.y += p.vy;
 
-      p.vx += (Math.random() - 0.5) * 0.001;
-      p.vy += (Math.random() - 0.5) * 0.001;
+      p.vx += (Math.random() - 0.5) * 0.01;
+      p.vy += (Math.random() - 0.5) * 0.01;
 
       p.vx *= 0.999;
       p.vy *= 0.999;
