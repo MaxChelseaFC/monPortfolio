@@ -36,8 +36,8 @@ type Particle = {
 };
 
 function GravityStarsBackground({
-  starsCount = 75,
-  starsSize = 2,
+  starsCount = 150,
+  starsSize = 3,
   starsOpacity = 0.75,
   glowIntensity = 15,
   glowAnimation = 'ease',
@@ -45,7 +45,7 @@ function GravityStarsBackground({
   mouseInfluence = 100,
   mouseGravity = 'attract',
   gravityStrength = 75,
-  starsInteraction = false,
+  starsInteraction = true,
   starsInteractionType = 'bounce',
   className,
   ...props
